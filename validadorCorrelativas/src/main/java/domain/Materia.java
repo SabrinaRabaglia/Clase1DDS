@@ -1,7 +1,7 @@
 package domain;
 import java.util.List;
 public class Materia {
-    private List<Materia> correlativas;
+    private List<Materia> correlativas = null;
 
     public List<Materia> getCorrelativas() {
         return correlativas;

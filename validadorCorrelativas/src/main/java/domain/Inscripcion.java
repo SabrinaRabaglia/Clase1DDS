@@ -7,13 +7,18 @@ public class Inscripcion {
     private Alumno alumnoAInscribir;
 
     public Boolean aceptarInscripcionAMateria (Materia materia){
-        return materia.getCorrelativas().stream().allMatch(m -> alumnoAInscribir.aproboMateria(m));
-
+        return alumnoAInscribir.puedeInscribirseA(materia);
     }
-    public Boolean aprobada () {//si accepto todas las materias
+    public Boolean aprobada () {
         return  materiasInscripcion.stream().allMatch(m->aceptarInscripcionAMateria(m));
-        //return materiasInscripcion.stream().allMatch(m,a->aceptarInscripcionAMateria(m,a));
-        //return true;
+
     }
 
+    public void setAlumnoAInscribir(Alumno alumnoAInscribir) {
+        this.alumnoAInscribir = alumnoAInscribir;
+    }
+
+    public void setMateriasInscripcion(List<Materia> materiasInscripcion) {
+        this.materiasInscripcion = materiasInscripcion;
+    }
 }
